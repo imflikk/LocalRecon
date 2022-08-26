@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\General.cs" />
+    <Compile Include="Util\NetworkEnum.cs" />
+    <Compile Include="Util\UserEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
