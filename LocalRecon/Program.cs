@@ -30,6 +30,7 @@ namespace LocalRecon
 				Console.WriteLine("\t1 - Run system command");
 				Console.WriteLine("\t2 - Show local users/administrators");
 				Console.WriteLine("\t3 - Show listening ports/services");
+				Console.WriteLine("\t99 - Run all checks");
 				Console.WriteLine("\n\t0 - Exit program");
 				Console.WriteLine(separator);
 
@@ -50,6 +51,7 @@ namespace LocalRecon
 						running = false;
 						break;
 					case 1:
+						Console.WriteLine(separator);
 						Console.Write("Command => ");
 						General.RunCommand(Console.ReadLine());
 						break;
@@ -58,6 +60,12 @@ namespace LocalRecon
 						UserEnum.GetUsers();
 						break;
 					case 3:
+						Console.WriteLine(separator);
+						NetworkEnum.GetListeningPorts();
+						break;
+					case 99:
+						Console.WriteLine(separator);
+						UserEnum.GetUsers();
 						NetworkEnum.GetListeningPorts();
 						break;
 					default:
