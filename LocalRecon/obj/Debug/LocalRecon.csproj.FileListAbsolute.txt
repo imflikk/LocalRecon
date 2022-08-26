@@ -1,7 +1,0 @@
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\bin\Debug\LocalRecon.exe.config
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\bin\Debug\LocalRecon.exe
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\bin\Debug\LocalRecon.pdb
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\obj\Debug\LocalRecon.csproj.AssemblyReference.cache
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\obj\Debug\LocalRecon.csproj.CoreCompileInputs.cache
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\obj\Debug\LocalRecon.exe
-C:\Users\Flikk\Desktop\projects\github\LocalRecon\LocalRecon\obj\Debug\LocalRecon.pdb
