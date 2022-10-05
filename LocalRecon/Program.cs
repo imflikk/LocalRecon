@@ -30,6 +30,8 @@ namespace LocalRecon
 				Console.WriteLine("\t1 - Run system command");
 				Console.WriteLine("\t2 - Show local users/administrators");
 				Console.WriteLine("\t3 - Show listening ports/services");
+				Console.WriteLine("\t4 - Show local services");
+				Console.WriteLine("\t5 - Show unquoted services (Vuln Check)");
 				Console.WriteLine("\t99 - Run all checks");
 				Console.WriteLine("\n\t0 - Exit program");
 				Console.WriteLine(separator);
@@ -63,10 +65,20 @@ namespace LocalRecon
 						Console.WriteLine(separator);
 						NetworkEnum.GetListeningPorts();
 						break;
+					case 4:
+						Console.WriteLine(separator);
+						ServiceEnum.GetLocalServices();
+						break;
+					case 5:
+						Console.WriteLine(separator);
+						ServiceEnum.GetUnquotedServices();
+						break;
 					case 99:
 						Console.WriteLine(separator);
 						UserEnum.GetUsers();
 						NetworkEnum.GetListeningPorts();
+						ServiceEnum.GetLocalServices();
+						ServiceEnum.GetUnquotedServices();
 						break;
 					default:
 						Console.WriteLine("Unknown command, try again.");
