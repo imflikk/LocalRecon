@@ -13,6 +13,7 @@ namespace LocalRecon.Util
     {
 
 
+        // This isn't used anymore, but keeping it for now just in case
         static ManagementObjectCollection GetServices()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Service");
@@ -70,6 +71,10 @@ namespace LocalRecon.Util
             //    }
             //}
 
+
+            // This portion taken mostly from SharpUp because I wasn't sure how to read the service DACL
+            // Reference: https://github.com/GhostPack/SharpUp/blob/master/SharpUp/Checks/ModifiableServices.cs
+            // 
             foreach (ServiceController sc in scServices)
             {
                 name = sc.ServiceName;
