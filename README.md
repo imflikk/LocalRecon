@@ -7,6 +7,8 @@ This tool will perform many of the same checks as [WinPeas](https://github.com/c
 - Run system command
 - Local user (and administrators)
 - Local listening ports
+- List all local services
+- Check for unquoted service paths
 
 ## Example Running (So far)
 ![image](https://user-images.githubusercontent.com/58894272/186997857-e67e22fa-bc08-4c96-8917-c67519e98c1d.png)
