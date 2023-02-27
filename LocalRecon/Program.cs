@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net.NetworkInformation;
 using LocalRecon.Util;
 
 namespace LocalRecon
@@ -7,14 +9,43 @@ namespace LocalRecon
 	{
 		static void Main(string[] args)
 		{
-			Console.BackgroundColor = ConsoleColor.Black;
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.Clear();
+			//Console.BackgroundColor = ConsoleColor.Black;
+			//Console.ForegroundColor = ConsoleColor.White;
+			//Console.Clear();
 
-			PromptUser();
+			RunChecks();
+
+			// Debugging statement to stop immediate exit
+			Console.ReadLine();
 		}
 
-		static void PromptUser()
+
+		// Run all checks at once for now.  Will split up later to be called based on command-line args
+		static void RunChecks()
+		{
+
+			Console.WriteLine("[*] Starting all checks...");
+			string separator = "==========================";
+
+            Console.WriteLine(separator);
+			UserEnum.GetCurrentUserInfo();
+            Console.WriteLine(separator);
+			UserEnum.GetUserGroups();
+            Console.WriteLine(separator);
+            UserEnum.GetUsers();
+            Console.WriteLine(separator);
+            NetworkEnum.GetListeningPorts();
+            Console.WriteLine(separator);
+            ServiceEnum.GetLocalServices();
+            Console.WriteLine(separator);
+			General.GetMappedDrives();
+
+        }
+
+
+
+		// Keep this in case I want the interactive prompt later
+		/*static void PromptUser()
 		{
 			bool running = true;
 			string separator = "==========================";
@@ -80,7 +111,7 @@ namespace LocalRecon
 
 				}
 			}
-		}
+		}*/
 
 	}
 }

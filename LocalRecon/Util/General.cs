@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace LocalRecon.Util
 {
@@ -24,5 +25,43 @@ namespace LocalRecon.Util
 			Console.WriteLine("-------------------------------------------");
 			Console.ForegroundColor = ConsoleColor.White;
 		}
-	}
+
+        public static void GetMappedDrives()
+        {
+            PrintSectionHeader("Mapped Network Drives");
+
+            DriveInfo[] drives = DriveInfo.GetDrives();
+
+            foreach (DriveInfo drive in drives)
+            {
+                try
+                {
+                    Console.WriteLine(drive.Name + " - " + drive.VolumeLabel);
+                }
+                catch
+                {
+                    Console.WriteLine(drive.Name);
+
+                }
+            }
+
+            PrintSectionFooter();
+        }
+
+        public static void PrintSectionHeader(string header)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"-------------- {header} --------------");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public static void PrintSectionFooter()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("-------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+        }
+    }
 }

@@ -41,9 +41,7 @@ namespace LocalRecon.Util
                 ServiceAccessRights.AllAccess
             };
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("-------------- All Services --------------");
-            Console.ForegroundColor = ConsoleColor.White;
+            General.PrintSectionHeader("Vulnerable Services");
 
             string name = "";
             string pathName = "";
@@ -96,7 +94,7 @@ namespace LocalRecon.Util
 
                 if (pathName[0] != '"' && !pathName.Contains("Windows") && !pathName.Contains("windows") && pathName.Contains(" "))
                 {
-                    unquoted = "Vulnerable (unquoted)".PadLeft(((20 - unquoted.Length) / 2) + unquoted.Length).PadRight(25);
+                    unquoted = "Potentially Vulnerable (unquoted)".PadLeft(((20 - unquoted.Length) / 2) + unquoted.Length).PadRight(25);
                 }
 
 
@@ -175,11 +173,14 @@ namespace LocalRecon.Util
                 }
 				else
 				{
-                    Console.WriteLine($"{name}|{unquoted}|{canRestart}|{pathName}");
+                    // Not printing all services for now, too much noise.
+                    //Console.WriteLine($"{name}|{unquoted}|{canRestart}|{pathName}");
                 }
                 
 
             }
+
+            General.PrintSectionFooter();
 
 
         }

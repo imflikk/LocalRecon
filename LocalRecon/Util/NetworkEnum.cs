@@ -26,9 +26,7 @@ namespace LocalRecon.Util
 
 		public static void GetListeningPorts()
 		{
-			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine("-------------- Listening Ports --------------");
-			Console.ForegroundColor = ConsoleColor.White;
+			General.PrintSectionHeader("Listening Ports");
 
 			IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
 			IPEndPoint[] endPoints = properties.GetActiveTcpListeners();
@@ -47,10 +45,7 @@ namespace LocalRecon.Util
 				
 			}
 
-			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine("-------------------------------------------");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine();
-		}
+            General.PrintSectionFooter();
+        }
 	}
 }
